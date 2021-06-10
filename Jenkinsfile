@@ -33,20 +33,5 @@ node {
             app.push("latest")
         }
     }
-     stage('Ansible Init') {
-        
-                
-               def tfHome = tool name: 'Ansible'
-                env.PATH = "${tfHome}:${env.PATH}"
-                 sh 'ansible --version'
-                    
-          
-     }
-    stage('Ansible Deploy') {
-             
-          
-               
-               sh "ansible-playbook py.yml -i /home/test/ansible-nginx-demo/hosts --user jenkins --key-file ~/.ssh/id_rsa -e '/home/test/ansible-nginx-demo/files/nginx.conf.j2'"
-
-}
+   
 }
