@@ -35,7 +35,7 @@ node {
     }
     stage('Ansible playbook') {
         
-            sh "cd /etc/ansible
+            sh "cd /etc/ansible '\n'
             ansible-playbook py.yml -u test --extra-vars 'ansible_sudo_pass=test'"
        
     }
