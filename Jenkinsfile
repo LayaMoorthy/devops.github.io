@@ -33,5 +33,11 @@ node {
             app.push("latest")
         }
     }
-   
+    stage('Ansible playbook') {
+        steps {
+            sh "cd /etc/ansible/
+            ansible-playbook py.yml -u test --extra-vars 'ansible_sudo_pass=test'"
+        }
+    }
+    
 }
